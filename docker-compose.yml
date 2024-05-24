@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  go-backend:
+    container_name: go-backend
+    build:
+      context: ./go-backend
+    environment:
+      - DATABASE_URL_FILE=/run/secrets/database_url
+    ports:
+      - "3000:3000"
+
+  react-frondend:
+    container_name: react-frondend
+    build:
+      context: ./react-frondend
+    ports:
+      - "80:80"
+    depends_on:
+      - go-backend
+

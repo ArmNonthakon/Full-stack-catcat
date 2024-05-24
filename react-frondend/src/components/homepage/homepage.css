@@ -1,0 +1,119 @@
+.blog-container{
+    margin-left: 50px;
+    margin-bottom: 25px;
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    column-gap: 3%;
+    row-gap: 20px;
+}
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 100%;
+}
+.searchbar {
+    display: flex;
+    justify-content: end;
+    z-index: 99;
+}
+
+.wrapper input {
+    border-radius: 22px;
+    width: 388px;
+    height: 36px;
+    position: relative;
+    border: 3px solid black;
+    font-size: 18px;
+    padding-left: 50px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: end;
+    width: 388px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.wrapper button {
+    position: absolute;
+    right: 10;
+    border-radius: 22px;
+    width: 116px;
+    height: 41px;
+    background-color: #FBD240;
+    border: 2px solid black;
+    margin-top: 1px;
+    color: black;
+}
+
+.wrapper img {
+    position: absolute;
+    width: 40px;
+    margin-top: 2px;
+    left: 10px;
+}
+.list {
+    margin: 20px 120px 0px 30px;
+    cursor: pointer;
+    transition: transform 1s;
+    /*transform: rotate(-90deg);*/
+}
+
+div.category {
+    position: absolute;
+    background-color: #f5d976;
+    width: 347px;
+    height: auto;
+    z-index: 1;
+    right: 119px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 2px 2px 2px 2px;
+    display: none;
+    animation-name: showCategory;
+    animation-duration: 0.5s;
+}
+@keyframes showCategory {
+    from {margin-top: -42px;}
+    to {margin-top: 10px;}
+}
+.category h4{
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.contain-category {
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    row-gap: 10px;
+}
+.contain-category-age {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.contain-category-age input{
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+}
+.item-category {
+    display: flex;
+}
+.button-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-category button{
+    background-color: rgb(245, 139, 1);
+    width: 40%;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 2px 2px 2px 2px;
+}

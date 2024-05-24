@@ -1,0 +1,80 @@
+.manage{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
+.add-topic{
+    height: 10px;
+}
+.add-sec{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+}
+.add-sec div{
+    margin-left: 30px;
+}
+.add-sec div input{
+    width: 150px;
+    
+}
+.add-button-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.addButton{
+    background-color: rgb(48, 48, 248);
+    border: 1px none;
+    border-radius: 10px;
+    margin-left: 20px;
+    height: 30px;
+    width: 20%;
+}
+.manage-topic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.manage-topic{
+    font-size: 26px;
+    font-weight: 600;
+}
+table{
+    width: 98%;
+    text-align: center;
+    background-color: white;
+    margin: 0 1%;
+}
+tr th{
+    height: 50px;
+}
+tr td{
+    height: 50px;
+}
+
+.td-button{
+    width: 5%;
+}
+.td-button button{
+    width: 100%;
+    height: 70%;
+    color: black;
+    border-radius: 10px;
+    border: 1px none;
+}
+.td-button button:hover{
+    opacity: 0.5;
+}
+tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+.updateButton{
+    background-color: rgb(89, 232, 110);
+}
+.deleteButton{
+    background-color: red;
+}
