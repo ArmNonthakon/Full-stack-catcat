@@ -6,8 +6,10 @@ function Navbar({ Path }) {
     const [showMenuState, setShowMenuState] =useState(false)
     const logout = () => {
         const logout = document.getElementById('authenLogout')
+        const logout2 = document.getElementById('authenLogout2')
         localStorage.removeItem('token')
         logout.style.display = "none"
+        logout2.style.display = "none"
 
     }
     const showMenu = ()=>{
@@ -35,18 +37,42 @@ function Navbar({ Path }) {
             console.log('Login and Register');
         }
     }
+    window.addEventListener("resize",()=>{
+        const logout = document.getElementById('authenLogout')
+        const logout2 = document.getElementById('authenLogout2')
+        let w = window.innerWidth
+        if(w <= 700){
+            logout2.style.display = "flex"
+            logout.style.display = "none"
+        }
+        else{
+            logout.style.display = "flex"
+            logout2.style.display = "none"
+        }
+
+    });
     useEffect(() => {
         const logout = document.getElementById('authenLogout')
+        const logout2 = document.getElementById('authenLogout2')
         const authen = document.getElementById('authen')
-
+        const authen2 = document.getElementById('authen2')
+        let w = window.innerWidth
         if (localStorage.getItem('token') != null) {
             authen.style.display = "none"
-            logout.style.display = "flex"
+            authen2.style.display = "none"
+            if(w <= 700){
+                logout2.style.display = "flex"
+            }
+            else{
+                logout.style.display = "flex"
+            }
             checkPath()
         }
         else {
             authen.style.display = "flex"
+            authen2.style.display = "flex"
             logout.style.display = "none"
+            logout2.style.display = "none"
             checkPath()
         }
 
@@ -78,13 +104,15 @@ function Navbar({ Path }) {
                 <div>
                     <a id="Manage" href="/manage">MANAGE DATA</a>
                 </div>
-                <div id="authen" class="section-authen">
+                <div id="authen2" class="section-authen">
                     <a href="/login">LOGIN</a>
                     <a className="a-register" href="/register"><button >REGISTER</button></a>
                 </div>
-                <div className="sec-logout">
-                     <a href="/login" id="authenLogout" className="logout-button" onClick={logout}>LOGOUT</a>
+                <div>
+                    <a href="/login" id="authenLogout2" className="logout-button" onClick={logout}>LOGOUT</a>
                 </div>
+                
+                
                
             </div>
 

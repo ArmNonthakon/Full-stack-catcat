@@ -78,6 +78,7 @@ nav a:hover{
     border-bottom: 3px solid rgb(234, 36, 36);
 }
 
+
 @media only screen and (max-width: 700px) {
     nav a {
         display: none;
@@ -85,6 +86,12 @@ nav a:hover{
     nav div.section-authen{
         display: none;
         
+    }
+    #authenLogout{
+        display: none;
+    }
+    #authenLogout2{
+        padding: 14px 16px;
     }
     nav{
         background-color: #f4ef5b;
@@ -105,6 +112,7 @@ nav a:hover{
         border: 1px solid black;
         position:absolute;
         right: 0px;
+        min-width: 50%;
         width: auto;
         height: 100%;
         padding: 10px 30px;
@@ -137,9 +145,6 @@ nav a:hover{
         width: 90%;
         padding: 20px 0px 20px 0px;
         
-    }
-    div.sec-logout {
-        display: none;
     }
     .section-authen{
         display: flex;

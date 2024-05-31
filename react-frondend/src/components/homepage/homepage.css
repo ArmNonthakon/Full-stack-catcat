@@ -75,7 +75,7 @@ div.category {
     width: 347px;
     height: auto;
     z-index: 1;
-    right: 119px;
+    right: 6%;
     margin-top: 10px;
     border: 2px solid black;
     border-radius: 20px;
@@ -131,12 +131,12 @@ div.category {
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1050px) {
     .blog-container{
         grid-template-columns: repeat(2,46%);
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 580px) {
     .blog-container{
         grid-template-columns: 95%;
         column-gap: 0%;

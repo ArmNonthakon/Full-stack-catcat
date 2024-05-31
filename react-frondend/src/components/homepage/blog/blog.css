@@ -57,3 +57,11 @@
         font-size: 14px;
     }
 }
+@media only screen and (max-width: 400px) {
+    .blog-content p{
+        font-size: 12px;
+    }
+    .about-content{
+        font-size: 12px;
+    }
+}
