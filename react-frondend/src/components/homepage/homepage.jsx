@@ -67,51 +67,50 @@ function Homepage() {
         }
 
     }
-    const showCategory = ()=>{
+    const showCategory = () => {
         const list = document.getElementById('list')
         const categoryBlock = document.getElementById('category')
-        if(checkList == false){
+        if (checkList == false) {
             setList(true)
-            list.style.transform = "rotate(90deg)";
-            categoryBlock.style.display = "block"
             
+            categoryBlock.style.display = "block"
+
         }
-        else if(checkList == true){
+        else if (checkList == true) {
             setList(false)
-            list.style.transform = "rotate(0)";
             categoryBlock.style.display = "none"
         }
-        
+
     }
-    const getCategory = async ()=>{
-        const gender = ["Male","Female"]
-        const color = ["White","Black","Grey","Orange","Brown","Cream"]
+    const getCategory = async () => {
+        const gender = ["Male", "Female"]
+        const color = ["White", "Black", "Grey", "Orange", "Brown", "Cream"]
         const min = document.getElementById('min').value
         const max = document.getElementById('max').value
         let resultGender = []
         let resultColor = []
-        const resultAge = [parseInt(min) , parseInt(max)]
+        const resultAge = [parseInt(min), parseInt(max)]
         gender.forEach(element => {
-            if(document.getElementById(element).checked != false){
+            if (document.getElementById(element).checked != false) {
                 resultGender.push(element)
             }
         });
         color.forEach(element => {
-            if(document.getElementById(element).checked != false){
+            if (document.getElementById(element).checked != false) {
                 resultColor.push(element)
             }
         });
         try {
             const res = await axios.post("/api/getDataByCategory", {
-                    Gender: resultGender,
-                    Color: resultColor,
-                    Age: resultAge,
+                Gender: resultGender,
+                Color: resultColor,
+                Age: resultAge,
 
-                }, {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('token')
-                    }
-                })
+            }, {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
+            })
             console.log(res.data.data)
             setData(res.data.data)
             setState('categoryData')
@@ -141,12 +140,15 @@ function Homepage() {
         <>
             <form action="" onSubmit={callDataByName}>
                 <div className='searchbar'>
-                    <div className='wrapper'>
-                        <input type="text" id='inputName' placeholder="Search cat name" />
-                        <button >search</button>
-                        <img src="/search (1).png" alt="" />
+                    <div className='group-search-sorting'>
+                        <div className='wrapper'>
+                            <input type="text" id='inputName' placeholder="Input cat name" />
+                            <button >search</button>
+                            <img className='searchPic' src="/search (1).png" alt="" />
+                        </div>
+                        <img className='sorting'  src="/sort.png" id='list' onClick={showCategory} alt="" />
                     </div>
-                    <img className='list' src="/list.png" width="40px" id='list' onClick={showCategory} alt="" />
+
                 </div>
             </form>
             <div className='category' id='category'>
@@ -166,14 +168,14 @@ function Homepage() {
                 <div className='contain-category'>
                     <div className='item-category'>
                         <label htmlFor="" >White</label>
-                        <input type="checkbox" name="" id="White" value="white"  />
+                        <input type="checkbox" name="" id="White" value="white" />
                     </div>
                     <div className='item-category'>
                         <label htmlFor="">Black</label>
                         <input type="checkbox" name="" id="Black" value="black" />
                     </div>
                     <div className='item-category'>
-                    <label htmlFor="">Grey</label>
+                        <label htmlFor="">Grey</label>
                         <input type="checkbox" name="" id="Grey" value="grey" />
                     </div>
                     <div className='item-category'>
@@ -185,20 +187,20 @@ function Homepage() {
                         <input type="checkbox" name="" id="Brown" value="brown" />
                     </div>
                     <div className='item-category'>
-                    <label htmlFor="">Cream</label>
+                        <label htmlFor="">Cream</label>
                         <input type="checkbox" name="" id="Cream" value="cream" />
                     </div>
                 </div>
                 <h4>Age</h4>
                 <div className='contain-category-age'>
-                    <input type="text" placeholder='MIN' id='min'/>
-                    <h4 style={{margin:"0px 5px"}}>-</h4>
-                    <input type="text" name=""  placeholder='MAX' id="max"/>
+                    <input type="text" placeholder='MIN' id='min' />
+                    <h4 style={{ margin: "0px 5px" }}>-</h4>
+                    <input type="text" name="" placeholder='MAX' id="max" />
                 </div>
                 <div className='button-category'>
                     <button onClick={getCategory}>SUBMIT</button>
                 </div>
-                
+
             </div>
 
             <div className='error'>

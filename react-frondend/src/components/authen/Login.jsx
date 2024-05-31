@@ -59,7 +59,7 @@ function Login() {
                 <a href=""><img src="/search.png" width="40px" alt="Google" /></a>
                 <a href=""><img src="/X.png" width="40px" alt="X" /></a>
               </div>
-              <p>Don't have an account? <a href="/register">Sign up</a></p>
+              <p className='clickToRegis'>Don't have an account? <a href="/register">Sign up</a></p>
             </div>
           </form>
         </div>

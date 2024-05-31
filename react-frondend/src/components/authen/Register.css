@@ -87,3 +87,44 @@ input{
 .read-the-docs {
   color: #888;
 }
+@media only screen and (max-width:600px) {
+  .register {
+    justify-content: start;
+    align-items: start;
+  }
+  #inner-topic{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 65%;
+  }
+  button {
+    width: 40%;
+  }
+}
+@media only screen and (max-width:400px) {
+  .register {
+    justify-content: start;
+    align-items: start;
+  }
+  #inner-topic{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 70%;
+  }
+  #block {
+    width: 800px;
+  }
+  button {
+    width: 60%;
+  }
+  .other-regis img{
+    width: 35px;
+  }
+  .other-regis a{
+    margin-right: 10px;
+  }
+}

@@ -19,6 +19,14 @@ nav a:hover{
     border-bottom: 3px solid rgba(0, 0, 0, 0.73);
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.741);
     color: rgba(0, 0, 0, 0.837);
+    
+}
+.mobile-menu{
+    display: none;
+    z-index: 99;
+}
+.menuPic{
+    display: none;
 }
 .section-authen{
     display: flex;
@@ -34,15 +42,18 @@ nav a:hover{
     background-color: #D9D9D9;
     color: black;
     font-weight: 800;
+    
 }
 .section-authen button:hover{
     background-color: #434141;
     color: white;
+    
 }
 .section-authen  a:hover{
     border-bottom: none;
     text-decoration: underline;
     text-shadow: 4px 4px 4px rgba(120, 120, 118, 0.741);
+    
 }
 .a-register{
     margin-top: 0px;
@@ -55,6 +66,7 @@ nav a:hover{
     margin-bottom: 0px;
     border-bottom: none;
     text-decoration: none;
+    
 }
 .logout-button {
     display: none;
@@ -65,3 +77,87 @@ nav a:hover{
     cursor: pointer;
     border-bottom: 3px solid rgb(234, 36, 36);
 }
+
+@media only screen and (max-width: 700px) {
+    nav a {
+        display: none;
+    }
+    nav div.section-authen{
+        display: none;
+        
+    }
+    nav{
+        background-color: #f4ef5b;
+        padding: 11px 18px;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+    .menuPic{
+        display: block;
+    }
+    .mobile-menu{
+        display: none;
+        justify-content: start;
+        align-items: center;
+        font-size: 24px;
+        flex-direction: column;
+        background-color: #f9f338;
+        border: 1px solid black;
+        position:absolute;
+        right: 0px;
+        width: auto;
+        height: 100%;
+        padding: 10px 30px;
+        animation-name: showMenu;
+        animation-duration: 1s;
+    }
+    @keyframes showMenu {
+        from{margin-right: -300px}
+        to{margin-right: 0px}
+    }
+    .mobile-menu a{
+        margin: 10px;
+        color: rgb(0, 0, 0);
+        
+    }
+    .mobile-menu div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid black;
+        width: 98%;
+        padding: 20px 0px 35px 0px;
+        
+    }
+    .mobile-menu div:first-child{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border-bottom: none;
+        width: 90%;
+        padding: 20px 0px 20px 0px;
+        
+    }
+    div.sec-logout {
+        display: none;
+    }
+    .section-authen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+    }
+    .section-authen button{
+        margin: 0 0 0 0;
+        font-size: 22px;
+        width: auto;
+        padding: 17px 18px;
+        background-color: #f69505;
+    }
+    .a-register:hover{
+        margin-bottom: 10px;
+        border-bottom: none;
+        text-decoration: none;
+        text-decoration: none;
+    }
+  }
