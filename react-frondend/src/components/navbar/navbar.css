@@ -55,6 +55,9 @@ nav a:hover{
     text-shadow: 4px 4px 4px rgba(120, 120, 118, 0.741);
     
 }
+section-authen-logout{
+    display: none;
+}
 .a-register{
     margin-top: 0px;
     text-decoration: none;
@@ -71,6 +74,8 @@ nav a:hover{
 .logout-button {
     display: none;
     border: 2px solid ;
+    justify-content: center;
+    align-items: center;
 }
 .logout-button:hover {
     color: rgb(234, 36, 36);
@@ -114,7 +119,7 @@ nav a:hover{
         right: 0px;
         min-width: 50%;
         width: auto;
-        height: 100%;
+        min-height: 100%;
         padding: 10px 30px;
         animation-name: showMenu;
         animation-duration: 1s;

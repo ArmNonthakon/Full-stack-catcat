@@ -7,9 +7,11 @@ function Navbar({ Path }) {
     const logout = () => {
         const logout = document.getElementById('authenLogout')
         const logout2 = document.getElementById('authenLogout2')
+        const divLogout = document.getElementById('divLogout')
         localStorage.removeItem('token')
         logout.style.display = "none"
         logout2.style.display = "none"
+        divLogout.style.display = "none"
 
     }
     const showMenu = ()=>{
@@ -40,7 +42,10 @@ function Navbar({ Path }) {
     window.addEventListener("resize",()=>{
         const logout = document.getElementById('authenLogout')
         const logout2 = document.getElementById('authenLogout2')
+        const menuMobile = document.getElementByIdj('mobile-menu')
+        
         let w = window.innerWidth
+        menuMobile.style.height = w + "px"
         if(w <= 700){
             logout2.style.display = "flex"
             logout.style.display = "none"
@@ -56,12 +61,14 @@ function Navbar({ Path }) {
         const logout2 = document.getElementById('authenLogout2')
         const authen = document.getElementById('authen')
         const authen2 = document.getElementById('authen2')
+        const divLogout = document.getElementById('divLogout')
         let w = window.innerWidth
         if (localStorage.getItem('token') != null) {
             authen.style.display = "none"
             authen2.style.display = "none"
             if(w <= 700){
                 logout2.style.display = "flex"
+                divLogout.style.display = "block"
             }
             else{
                 logout.style.display = "flex"
@@ -73,6 +80,7 @@ function Navbar({ Path }) {
             authen2.style.display = "flex"
             logout.style.display = "none"
             logout2.style.display = "none"
+            divLogout.style.display = "none"
             checkPath()
         }
 
@@ -108,7 +116,7 @@ function Navbar({ Path }) {
                     <a href="/login">LOGIN</a>
                     <a className="a-register" href="/register"><button >REGISTER</button></a>
                 </div>
-                <div>
+                <div id="divLogout" className="section-authen-logout">
                     <a href="/login" id="authenLogout2" className="logout-button" onClick={logout}>LOGOUT</a>
                 </div>
                 
