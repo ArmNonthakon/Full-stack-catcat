@@ -58,14 +58,30 @@ input{
   color: red;
   font-size: 16px;
 }
-@media only screen and (max-width:400px) {
+@media only screen and (max-width:450px) {
   .other-regis a{
-    margin-right: 10px;
+    margin-right: 8px;
+  }
+  .other-regis a img{
+    width: 30px;
   }
   .clickToRegis{
-    font-size: 16px;
+    font-size: 14px;
   }
   #inner-topic{
-    width: 65%;
+    width: 60%;
+    
   }
+  #inner-topic label{
+    font-size: 14px;
+  }
+  #container-login button{
+    width: 50%;
+    height: 14px;
+    font-size: 14px;
+  }
+  #container-login p{
+    font-size: 14px;
+  }
+  
 }
