@@ -69,7 +69,7 @@ input{
     font-size: 14px;
   }
   #inner-topic{
-    width: 60%;
+    width: 65%;
     
   }
   #inner-topic label{
@@ -82,6 +82,9 @@ input{
   }
   #container-login p{
     font-size: 14px;
+  }
+  #container-login h2{
+    font-size: 20px;
   }
   
 }

@@ -113,7 +113,7 @@ input{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    width: 70%;
+    width: 65%;
   }
   #block {
     width: 800px;
