@@ -3,7 +3,8 @@ import "./navbar.css"
 import axios from "axios"
 import { Navigate, useNavigate, useLocation } from "react-router-dom"
 function Navbar({ Path }) {
-    const [showMenuState, setShowMenuState] =useState(false)
+    const [showMenuState, setShowMenuState] = useState(false)
+    const [logState, setLogState] = useState(false)
     const logout = () => {
         const logout = document.getElementById('authenLogout')
         const logout2 = document.getElementById('authenLogout2')
@@ -12,19 +13,21 @@ function Navbar({ Path }) {
         logout.style.display = "none"
         logout2.style.display = "none"
         divLogout.style.display = "none"
-
+        setLogState(false)
     }
-    const showMenu = ()=>{
+    const showMenu = () => {
         let menu = document.getElementById('mobile-menu')
-        if(showMenuState == false){
+        if (showMenuState == false) {
             menu.style.display = "flex"
             setShowMenuState(true)
+            console.log('showMenu False')
         }
-        else{
+        else {
             menu.style.display = "none"
             setShowMenuState(false)
+            console.log('showMenu True')
         }
-        
+
     }
     const checkPath = () => {
         if (Path == "/") {
@@ -39,21 +42,23 @@ function Navbar({ Path }) {
             console.log('Login and Register');
         }
     }
-    window.addEventListener("resize",()=>{
+    window.addEventListener("resize", () => {
         const logout = document.getElementById('authenLogout')
         const logout2 = document.getElementById('authenLogout2')
-        const menuMobile = document.getElementByIdj('mobile-menu')
-        
         let w = window.innerWidth
-        menuMobile.style.height = w + "px"
-        if(w <= 700){
-            logout2.style.display = "flex"
-            logout.style.display = "none"
+        if (logState == true) {
+            if (w <= 700) {
+                logout2.style.display = "flex"
+                logout.style.display = "none"
+                console.log('resize < 700')
+            }
+            else {
+                logout.style.display = "flex"
+                logout2.style.display = "none"
+                console.log('resize > 700')
+            }
         }
-        else{
-            logout.style.display = "flex"
-            logout2.style.display = "none"
-        }
+
 
     });
     useEffect(() => {
@@ -63,19 +68,29 @@ function Navbar({ Path }) {
         const authen2 = document.getElementById('authen2')
         const divLogout = document.getElementById('divLogout')
         let w = window.innerWidth
+        console.log(w)
         if (localStorage.getItem('token') != null) {
+            setLogState(true)
             authen.style.display = "none"
             authen2.style.display = "none"
-            if(w <= 700){
+            if (w <= 700) {
                 logout2.style.display = "flex"
+                logout.style.display = "none"
                 divLogout.style.display = "block"
             }
-            else{
-                logout.style.display = "flex"
+            else if (w > 700) {
+                if (showMenuState == true) {
+                    logout.style.display = "none"
+                }
+                else {
+                    logout.style.display = "flex"
+                }
+
             }
             checkPath()
         }
         else {
+            setLogState(false)
             authen.style.display = "flex"
             authen2.style.display = "flex"
             logout.style.display = "none"
@@ -88,7 +103,7 @@ function Navbar({ Path }) {
     return (
         <>
             <nav>
-                
+
                 <a id="Home" href="/">HOME</a>
                 <a id="Manage" href="/manage">MANAGE DATA</a>
                 <img src="/cat (1).png" width="68px" alt="" />
@@ -105,7 +120,7 @@ function Navbar({ Path }) {
                 <div>
                     <img src="/list.png" width="37px" onClick={showMenu} alt="" />
                 </div>
-                
+
                 <div>
                     <a id="Home" href="/">HOME</a>
                 </div>
@@ -119,9 +134,9 @@ function Navbar({ Path }) {
                 <div id="divLogout" className="section-authen-logout">
                     <a href="/login" id="authenLogout2" className="logout-button" onClick={logout}>LOGOUT</a>
                 </div>
-                
-                
-               
+
+
+
             </div>
 
         </>

@@ -26,7 +26,7 @@ function Login() {
       document.getElementById("response-text").textContent = "Login success!!";
       const goToHome = setTimeout(() => {
         navigate(0)
-      }, 3000);
+      }, 1000);
 
     } catch (error) {
       console.error(error);
