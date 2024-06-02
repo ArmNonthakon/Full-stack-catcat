@@ -20,12 +20,10 @@ function Navbar({ Path }) {
         if (showMenuState == false) {
             menu.style.display = "flex"
             setShowMenuState(true)
-            console.log('showMenu False')
         }
         else {
             menu.style.display = "none"
             setShowMenuState(false)
-            console.log('showMenu True')
         }
 
     }
@@ -38,9 +36,6 @@ function Navbar({ Path }) {
             const manage = document.getElementById('Manage')
             manage.style.cssText = "margin-bottom: 7px;border-bottom: 3px solid rgba(0, 0, 0, 0.73);text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.741);color: rgba(0, 0, 0, 0.837);"
         }
-        else {
-            console.log('Login and Register');
-        }
     }
     window.addEventListener("resize", () => {
         const logout = document.getElementById('authenLogout')
@@ -50,12 +45,10 @@ function Navbar({ Path }) {
             if (w <= 700) {
                 logout2.style.display = "flex"
                 logout.style.display = "none"
-                console.log('resize < 700')
             }
             else {
                 logout.style.display = "flex"
                 logout2.style.display = "none"
-                console.log('resize > 700')
             }
         }
 
@@ -68,7 +61,6 @@ function Navbar({ Path }) {
         const authen2 = document.getElementById('authen2')
         const divLogout = document.getElementById('divLogout')
         let w = window.innerWidth
-        console.log(w)
         if (localStorage.getItem('token') != null) {
             setLogState(true)
             authen.style.display = "none"
